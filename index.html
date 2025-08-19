@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皮肤申请成功</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            success: '#00B42A',
+            dark: '#1D2129',
+            light: '#F2F3F5',
+            'gray-100': '#F7F8FA',
+            'gray-200': '#E5E6EB',
+            'gray-300': '#C9CDD4',
+            'gray-400': '#86909C',
+            'gray-500': '#4E5969',
+            'gray-600': '#272E3B',
+            'gray-700': '#1D2129',
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .success-animation {
+        animation: successPulse 2s ease-in-out;
+      }
+      .floating {
+        animation: float 3s ease-in-out infinite;
+      }
+    }
+    
+    @keyframes successPulse {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-inter text-gray-700 min-h-screen flex items-center justify-center p-4">
+  <div class="max-w-md w-full bg-white rounded-2xl shadow-card overflow-hidden success-animation">
+    <!-- 顶部成功图标区域 -->
+    <div class="bg-primary/10 p-6 text-center">
+      <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto floating">
+        <i class="fa fa-check text-primary text-3xl"></i>
+      </div>
+      <h1 class="text-[clamp(1.5rem,3vw,2rem)] font-bold text-primary mt-4">兑换成功</h1>
+      <p class="text-gray-500 mt-2">您的皮肤兑换申请已成功提交</p>
+    </div>
+    
+    <!-- 申请信息区域 -->
+    <div class="p-6 space-y-4">
+      <div class="bg-gray-50 rounded-xl p-4">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-sm font-medium text-gray-500">申请编号</span>
+          <span class="text-sm font-medium">PUBGMOBILE02275422100</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-sm font-medium text-gray-500">申请时间</span>
+          <span class="text-sm font-medium">刚刚</span>
+        </div>
+      </div>
+      
+      <div class="space-y-3">
+        <h2 class="text-lg font-semibold">皮肤信息</h2>
+        <div class="flex items-center">
+          <img src="https://pan.29o.cn/view.php/91c082cf40742838ea22c5ce3562b114.png" alt="申请的皮肤" class="w-16 h-16 rounded-lg object-cover">
+          <div class="ml-4">
+            <h3 class="font-medium">地铁逃生妹控福利包</h3>
+            <p class="text-sm text-gray-500">基础外观</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="bg-success/10 rounded-lg p-4">
+        <div class="flex items-start">
+          <i class="fa fa-info-circle text-success mt-0.5"></i>
+          <div class="ml-3">
+            <h3 class="font-medium text-success">处理说明</h3>
+            <p class="text-sm text-gray-600 mt-1">皮肤将在72小时内发送至玩家邮件，请耐心等待不要卸载兑换器避免系统兑换失败！</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 底部按钮区域 -->
+    <div class="p-6 pt-0">
+      <button class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
+        <i class="fa fa-home mr-2"></i> 完成
+      </button>
+    </div>
+  </div>
+</body>
+</html>
+    
